@@ -66,7 +66,7 @@ const [interestRate, setInterestRate] = useState("");
 
 <form onSubmit={updateSubmitHandler}>
         <div >
-            <label>Equipment Number</label>
+            <label>Number</label>
             <input
                 onChange={(e) => setEqpNumber(e.target.value)}               
                 name="eqpNumber"
@@ -78,7 +78,7 @@ const [interestRate, setInterestRate] = useState("");
         <br />
 
         <div>
-            <label>Equipment Brand</label>
+            <label>Brand</label>
             <input
                 onChange={(e) => setEqpBrand(e.target.value)}
                 name="eqpBrand"
@@ -90,7 +90,7 @@ const [interestRate, setInterestRate] = useState("");
         <br />
 
         <div>
-            <label>Equipment Type</label>
+            <label>Type</label>
             <input
                 onChange={(e) => setEqpType(e.target.value)}
                 name="eqpType"
@@ -102,7 +102,7 @@ const [interestRate, setInterestRate] = useState("");
         <br />
 
         <div>
-            <label>Equipment Price</label>
+            <label>Price</label>
             <input
                 onChange={(e) => setPrice(e.target.value)}
                 name="price"
@@ -114,7 +114,7 @@ const [interestRate, setInterestRate] = useState("");
         <br />
 
         <div>
-            <label>Equipment Monthly Payment</label>
+            <label>Monthly Payment</label>
             <input
                 onChange={(e) => setPayment(e.target.value)}
                 name="payment"
@@ -126,19 +126,18 @@ const [interestRate, setInterestRate] = useState("");
         <br />
 
         <div>
-            <label>Loan Lender</label>
+            <label>Lender</label>
             <input
                 onChange={(e) => setLender(e.target.value)}
                 name="lender"
                 value={lender}
-               
             />
         </div>
 
         <br />
 
         <div>
-            <label>Loan Interest Rate</label>
+            <label>Int Rate</label>
             <input
                 onChange={(e) => setInterestRate(e.target.value)}
                 name="interestRate"

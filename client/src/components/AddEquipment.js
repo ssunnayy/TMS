@@ -2,6 +2,10 @@ import React, { useState } from "react";
 import { Link, navigate } from "@reach/router";
 import axios from "axios";
 import "../App.css";
+import { Button } from 'react-bootstrap';
+import { Navbar } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const AddEquipment = (props) => {
   const [errors, setErrors] = useState({});
@@ -38,12 +42,18 @@ const AddEquipment = (props) => {
 
   return (
     <div>
+        <Navbar bg="dark">
+            <Navbar.Brand>
+                Logo
+            </Navbar.Brand>
+
+        </Navbar>
         <header>Transport Manager System</header>
 
 
         <form onSubmit={submitHandler}>
                 <div >
-                    <label>Equipment Number</label>
+                    <label>Number</label>
                     <input
                         onChange={(e) => setEqpNumber(e.target.value)}
                         //We set our value to title here mainly to help us clear out the inputs on submission
@@ -57,7 +67,7 @@ const AddEquipment = (props) => {
                 <br />
 
                 <div>
-                    <label>Equipment Brand</label>
+                    <label>Brand</label>
                     <input
                         onChange={(e) => setEqpBrand(e.target.value)}
                         value={eqpBrand}
@@ -70,7 +80,7 @@ const AddEquipment = (props) => {
                 <br />
 
                 <div>
-                    <label>Equipment Type</label>
+                    <label>Type</label>
                     <input
                         onChange={(e) => setEqpType(e.target.value)}
                         value={eqpType}
@@ -83,7 +93,7 @@ const AddEquipment = (props) => {
                 <br />
 
                 <div>
-                    <label>Equipment Price</label>
+                    <label>Price</label>
                     <input
                         onChange={(e) => setPrice(e.target.value)}
                         value={price}
@@ -96,7 +106,7 @@ const AddEquipment = (props) => {
                 <br />
 
                 <div>
-                    <label>Equipment Monthly Payment</label>
+                    <label>Monthly Payment</label>
                     <input
                         onChange={(e) => setPayment(e.target.value)}
                         value={payment}
@@ -109,7 +119,7 @@ const AddEquipment = (props) => {
                 <br />
 
                 <div>
-                    <label>Loan Lender</label>
+                    <label>Lender</label>
                     <input
                         onChange={(e) => setLender(e.target.value)}
                         value={lender}
@@ -122,7 +132,7 @@ const AddEquipment = (props) => {
                 <br />
 
                 <div>
-                    <label>Loan Interest Rate</label>
+                    <label>Int Rate</label>
                     <input
                         onChange={(e) => setInterestRate(e.target.value)}
                         value={interestRate}
@@ -134,7 +144,9 @@ const AddEquipment = (props) => {
 
                 <br />
                 
-                <input className="submit-input" type="submit" value="Add Equipment" />
+                {/* <input className="submit-input" type="submit" value="Add Equipment" /> */}
+                <button variant="secondry"> Add Equipment</button>
+                
             </form>
       
     </div>

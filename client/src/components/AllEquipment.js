@@ -44,13 +44,13 @@ const AllEquipment = (props) => {
       <table >
         <thead  >
           <tr>
-            <th>Equipment Number</th>
-            <th>Equipment Brand</th>
-            <th>Equipment Type</th>
-            <th>Equipment Price</th>
-            <th>Equipment Monthly Payment</th>
-            <th>Loan Lender</th>
-            <th>Loan Interest Rate</th>
+            <th>Number</th>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Payment</th>
+            <th>Lender</th>
+            <th>Int Rate</th>
             <th>Actions</th>
           </tr>
         </thead>

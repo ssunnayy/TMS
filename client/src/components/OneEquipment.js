@@ -42,7 +42,7 @@ const OneEquipment = (props) => {
       </header>
 
       <header>
-        <h2> Details About: {oneEquipment.eqpNumber}</h2>
+        <h2> Details About Equipment Number: {oneEquipment.eqpNumber}</h2>
       </header>
 
       <div>
@@ -51,7 +51,7 @@ const OneEquipment = (props) => {
         <h2> Price: {oneEquipment.price}</h2>
         <h2> Payment: {oneEquipment.payment}</h2>
         <h2> Lender: {oneEquipment.lender}</h2>
-        <h2> Interest Rate: {oneEquipment.interestRate}</h2>
+        <h2> Int Rate: {oneEquipment.interestRate}</h2>
 
 
       </div>
