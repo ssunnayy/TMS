@@ -42,8 +42,9 @@ const AddEquipment = (props) => {
 
   return (
     <div>
-        <Navbar bg="dark">
-            <Navbar.Brand>
+        <Navbar bg="dark" variant="dark"
+        sticky="top" expand="sm" collapseOnSelect>
+            <Navbar.Brand margin>
                 Logo
             </Navbar.Brand>
 
@@ -61,7 +62,7 @@ const AddEquipment = (props) => {
                         name="eqpNumber"
                         type="number"
                     />
-                     {errors.eqpNumber ? <span>{errors.eqpNumber.message}</span> : null}
+                    {errors.eqpNumber ? <span>{errors.eqpNumber.message}</span> : null}
                 </div>
 
                 <br />
