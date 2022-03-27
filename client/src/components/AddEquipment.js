@@ -3,8 +3,9 @@ import { Link, navigate } from "@reach/router";
 import axios from "axios";
 import "../App.css";
 import { Button } from 'react-bootstrap';
-import { Navbar } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown  } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import truck from "../images/truck.jpg";
 
 
 const AddEquipment = (props) => {
@@ -42,11 +43,22 @@ const AddEquipment = (props) => {
 
   return (
     <div>
-        <Navbar bg="dark" variant="dark"
+        <Navbar bg="black" variant="dark"
         sticky="top" expand="sm" collapseOnSelect>
-            <Navbar.Brand margin>
-                Logo
+            <Navbar.Brand >
+            <img src={truck} width="50px" height="40px" />{' '}
             </Navbar.Brand>
+            <Navbar.Toggle className="coloring" />
+             <Navbar.Collapse>
+
+             <Nav>
+            <Nav.Link href="/">Dashboard</Nav.Link>
+            <Nav.Link href="/tms/new">New Equipment</Nav.Link>
+            <Nav.Link href="#about-us">About Us</Nav.Link>
+          </Nav>
+
+             </Navbar.Collapse>
+            
 
         </Navbar>
         <header>Transport Manager System</header>
