@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Link, navigate } from "@reach/router";
 import axios from "axios";
 import "../App.css";
-import { Button } from 'react-bootstrap';
-import { Nav, Navbar, NavDropdown  } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Button, Form, Container, Stack } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import truck from "../images/truck.jpg";
 
@@ -61,11 +60,11 @@ const AddEquipment = (props) => {
             
 
         </Navbar>
-        <header>Transport Manager System</header>
-
-
-        <form onSubmit={submitHandler}>
-                <div >
+        <h1>Add New Equipment</h1>
+        <Container>
+        <Stack gap={2} className="col-md-5 mx-auto">
+        <Form onSubmit={submitHandler}>
+                {/* <div >
                     <label>Number</label>
                     <input
                         onChange={(e) => setEqpNumber(e.target.value)}
@@ -75,11 +74,21 @@ const AddEquipment = (props) => {
                         type="number"
                     />
                     {errors.eqpNumber ? <span>{errors.eqpNumber.message}</span> : null}
-                </div>
+                </div> */}
 
-                <br />
+                <Form.Group className="mb-3" controlId="eqpNumber">
+                <Form.Label></Form.Label>
+                <Form.Control
+                type="number"  
+                value={eqpNumber}
+                name="eqpNumber"
+                onChange={(e) => setEqpNumber(e.target.value)}
+                placeholder="Equipment Number"/>
+                </Form.Group>
 
-                <div>
+
+
+                {/* <div>
                     <label>Brand</label>
                     <input
                         onChange={(e) => setEqpBrand(e.target.value)}
@@ -88,11 +97,20 @@ const AddEquipment = (props) => {
                         type="text"
                     />
                     {errors.eqpBrand ? <span>{errors.eqpBrand.message}</span> : null}
-                </div>
+                </div> */}
 
-                <br />
+                <Form.Group className="mb-3" controlId="eqpBrand">
+                <Form.Label></Form.Label>
+                <Form.Control
+                type="text"  
+                value={eqpBrand}
+                name="eqpBrand"
+                onChange={(e) => setEqpBrand(e.target.value)}
+                placeholder="Equipment Brand"/>
+                </Form.Group>
 
-                <div>
+
+                {/* <div>
                     <label>Type</label>
                     <input
                         onChange={(e) => setEqpType(e.target.value)}
@@ -101,10 +119,21 @@ const AddEquipment = (props) => {
                         type="text"
                     />
                     {errors.eqpType ? <span>{errors.eqpType.message}</span> : null}
-                </div>
+                </div> */}
 
-                <br />
 
+                <Form.Group className="mb-3" controlId="eqpType">
+                <Form.Label></Form.Label>
+                <Form.Control
+                type="text"  
+                value={eqpType}
+                name="eqpType"
+                onChange={(e) => setEqpType(e.target.value)}
+                placeholder="Equipment Type"/>
+                </Form.Group>
+
+         
+{/* 
                 <div>
                     <label>Price</label>
                     <input
@@ -114,11 +143,20 @@ const AddEquipment = (props) => {
                         type="number"
                     />
                     {errors.price ? <span>{errors.price.message}</span> : null}
-                </div>
+                </div> */}
 
-                <br />
+                <Form.Group className="mb-3" controlId="price">
+                <Form.Label></Form.Label>
+                <Form.Control
+                type="text"  
+                value={price}
+                name="price"
+                onChange={(e) => setPrice(e.target.value)}
+                placeholder="Equipment Price"/>
+                </Form.Group>
 
-                <div>
+
+                {/* <div>
                     <label>Monthly Payment</label>
                     <input
                         onChange={(e) => setPayment(e.target.value)}
@@ -127,11 +165,21 @@ const AddEquipment = (props) => {
                         type="number"
                     />
                     {errors.payment ? <span>{errors.payment.message}</span> : null}
-                </div>
+                </div> */}
 
-                <br />
 
-                <div>
+                <Form.Group className="mb-3" controlId="price">
+                <Form.Label></Form.Label>
+                <Form.Control
+                type="number"  
+                value={payment}
+                name="payment"
+                onChange={(e) => setPayment(e.target.value)}
+                placeholder="Monthly"/>
+                </Form.Group>
+
+
+                {/* <div>
                     <label>Lender</label>
                     <input
                         onChange={(e) => setLender(e.target.value)}
@@ -140,11 +188,20 @@ const AddEquipment = (props) => {
                         type="text"
                     />
                     {errors.lender ? <span>{errors.lender.message}</span> : null}
-                </div>
+                </div> */}
 
-                <br />
+                <Form.Group className="mb-3" controlId="lender">
+                <Form.Label></Form.Label>
+                <Form.Control
+                type="text"  
+                value={lender}
+                name="lender"
+                onChange={(e) => setLender(e.target.value)}
+                placeholder="Lender"/>
+                </Form.Group>
 
-                <div>
+
+                {/* <div>
                     <label>Int Rate</label>
                     <input
                         onChange={(e) => setInterestRate(e.target.value)}
@@ -153,14 +210,25 @@ const AddEquipment = (props) => {
                         type="number"
                     />
                     {errors.interestRate ? <span>{errors.interestRate.message}</span> : null}
-                </div>
+                </div> */}
 
-                <br />
+                <Form.Group className="mb-3" controlId="interestRate">
+                <Form.Label></Form.Label>
+                <Form.Control
+                type="number"  
+                value={interestRate}
+                name="interestRate"
+                onChange={(e) => setInterestRate(e.target.value)}
+                placeholder="Interest Rate"/>
+                </Form.Group>
+
+               
                 
                 {/* <input className="submit-input" type="submit" value="Add Equipment" /> */}
-                <button variant="secondry"> Add Equipment</button>
-                
-            </form>
+                <button variant="success"> Add Equipment</button>
+            </Form>
+            </Stack>
+            </Container>
       
     </div>
   );

@@ -2,6 +2,9 @@ import React, {useState, useEffect} from 'react';
 import {Link, navigate} from '@reach/router';
 import axios from 'axios';
 import "../App.css";
+import { Nav, Navbar, NavDropdown, Button, Form, Table } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import truck from "../images/truck.jpg";
 
 
 
@@ -35,13 +38,31 @@ const AllEquipment = (props) => {
 
   return (
     <div>
+       <Navbar bg="black" variant="dark"
+        sticky="top" expand="sm" collapseOnSelect>
+            <Navbar.Brand >
+            <img src={truck} width="50px" height="40px" />{' '}
+            </Navbar.Brand>
+            <Navbar.Toggle className="coloring" />
+             <Navbar.Collapse>
+
+             <Nav>
+            <Nav.Link href="/">Dashboard</Nav.Link>
+            <Nav.Link href="/tms/new">New Equipment</Nav.Link>
+            <Nav.Link href="#about-us">About Us</Nav.Link>
+          </Nav>
+
+             </Navbar.Collapse>
+            
+
+        </Navbar>
+
+
+
       <header className="header">
         <h1>List of All the Equipment</h1>
-        <p >
-          <Link to={"/tms/new"}>Add New Equipment to the Fleet</Link>
-        </p>
       </header>
-      <table >
+      <Table >
         <thead  >
           <tr>
             <th>Number</th>
@@ -74,7 +95,7 @@ const AllEquipment = (props) => {
               ))
             : null}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };
