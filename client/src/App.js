@@ -4,6 +4,7 @@ import AddEquipment from "./components/AddEquipment";
 import AllEquipment from "./components/AllEquipment";
 import EditEquipment from "./components/EditEquipment";
 import OneEquipment from "./components/OneEquipment";
+import HomePage from "./components/HomePage";
 import Error from "./components/Error";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Router>
         
         <AllEquipment path="/" /> 
+        <HomePage path="/tms/home" /> 
         <AddEquipment path="/tms/new"/>
         <EditEquipment path="/tms/:id/edit" />
         <OneEquipment path="/tms/:id"/> 

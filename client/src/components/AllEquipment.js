@@ -47,9 +47,10 @@ const AllEquipment = (props) => {
              <Navbar.Collapse>
 
              <Nav>
-            <Nav.Link href="/">Dashboard</Nav.Link>
-            <Nav.Link href="/tms/new">New Equipment</Nav.Link>
-            <Nav.Link href="#about-us">About Us</Nav.Link>
+            
+             <Nav.Link href="/tms/home">Home</Nav.Link>
+            <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>        
+            
           </Nav>
 
              </Navbar.Collapse>

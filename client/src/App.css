@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+.homepic{
+  margin-top: 5%;
+  border-radius: 100px;
+
+}
+
+.btn{
+  margin-top: 10px;
+
+}

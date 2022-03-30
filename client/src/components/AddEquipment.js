@@ -51,9 +51,9 @@ const AddEquipment = (props) => {
              <Navbar.Collapse>
 
              <Nav>
+            <Nav.Link href="/tms/home">Home</Nav.Link>
             <Nav.Link href="/">Dashboard</Nav.Link>
-            <Nav.Link href="/tms/new">New Equipment</Nav.Link>
-            <Nav.Link href="#about-us">About Us</Nav.Link>
+            
           </Nav>
 
              </Navbar.Collapse>
@@ -175,7 +175,7 @@ const AddEquipment = (props) => {
                 value={payment}
                 name="payment"
                 onChange={(e) => setPayment(e.target.value)}
-                placeholder="Monthly"/>
+                placeholder="Monthly Payment"/>
                 </Form.Group>
 
 

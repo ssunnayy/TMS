@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import {Link, navigate} from '@reach/router';
 import axios from "axios";
 import "../App.css";
+import { Nav, Navbar, NavDropdown, Button, Form, Container, Stack } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import truck from "../images/truck.jpg";
 
 const OneEquipment = (props) => {
   const { id } = props;
@@ -34,15 +37,29 @@ const OneEquipment = (props) => {
 
   return (
     <div>
-      <header>
-        <h1>Transportation Management System</h1>
-        <p>
-          <Link to={"/"}>List of all Equipment</Link>
-        </p>
-      </header>
+
+<Navbar bg="black" variant="dark"
+        sticky="top" expand="sm" collapseOnSelect>
+            <Navbar.Brand >
+            <img src={truck} width="50px" height="40px" />{' '}
+            </Navbar.Brand>
+            <Navbar.Toggle className="coloring" />
+             <Navbar.Collapse>
+
+             <Nav>
+             <Nav.Link href="/tms/home">Home</Nav.Link>
+            <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>
+            <Nav.Link href="/">Dashboard</Nav.Link>
+          </Nav>
+
+             </Navbar.Collapse>
+            
+
+        </Navbar>
+      
 
       <header>
-        <h2> Details About Equipment Number: {oneEquipment.eqpNumber}</h2>
+        <h1> Details About Equipment Number: {oneEquipment.eqpNumber}</h1>
       </header>
 
       <div>
