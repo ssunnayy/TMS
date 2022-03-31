@@ -5,6 +5,7 @@ import AllEquipment from "./components/AllEquipment";
 import EditEquipment from "./components/EditEquipment";
 import OneEquipment from "./components/OneEquipment";
 import HomePage from "./components/HomePage";
+import LogReg from "./views/LogReg";
 import Error from "./components/Error";
 
 function App() {
@@ -12,9 +13,9 @@ function App() {
     <div className="App">
       
       <Router>
-        
-        <AllEquipment path="/" /> 
-        <HomePage path="/tms/home" /> 
+        <LogReg path="/"/>
+        <AllEquipment path="/tms/dash" /> 
+        <HomePage path="/home" /> 
         <AddEquipment path="/tms/new"/>
         <EditEquipment path="/tms/:id/edit" />
         <OneEquipment path="/tms/:id"/> 

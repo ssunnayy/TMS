@@ -8,6 +8,25 @@ import truck from "../images/truck.jpg";
 
 
 function HomePage() {
+
+  const logout = (e) => {
+    axios
+      .post(
+        "http://localhost:8000/api/users/logout",
+        {},
+        {
+          withCredentials: true,
+        },
+      )
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        navigate("/");
+      })
+      .catch((err) =>{
+        console.log(err);
+      });
+  };
     return (
       <div >
 
@@ -22,7 +41,8 @@ function HomePage() {
              <Nav>
             
             <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>
-            <Nav.Link href="/">Dashboard</Nav.Link>
+            <Nav.Link href="/tms/dash">Dashboard</Nav.Link>
+            <Button onClick={logout}>Logout</Button> 
             
           </Nav>
             </Navbar.Collapse>
@@ -41,7 +61,7 @@ function HomePage() {
         </div>  
 
         <div>
-        <Button variant="info" size="lg" href="/" className="btn">
+        <Button variant="info" size="lg" href="/tms/dash" className="btn">
          Dashboard
         </Button>
         </div>

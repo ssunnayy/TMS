@@ -62,6 +62,25 @@ const [interestRate, setInterestRate] = useState("");
       });
   };
 
+  const logout = (e) => {
+    axios
+      .post(
+        "http://localhost:8000/api/users/logout",
+        {},
+        {
+          withCredentials: true,
+        },
+      )
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+        navigate("/");
+      })
+      .catch((err) =>{
+        console.log(err);
+      });
+  };
+
   return (
     <div>
 
@@ -74,9 +93,10 @@ const [interestRate, setInterestRate] = useState("");
              <Navbar.Collapse>
 
              <Nav>
-             <Nav.Link href="/tms/home">Home</Nav.Link>
+             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>
-            <Nav.Link href="/">Dashboard</Nav.Link>
+            <Nav.Link href="/tms/dash">Dashboard</Nav.Link>
+            <Button onClick={logout}>Logout</Button> 
           </Nav>
 
              </Navbar.Collapse>
