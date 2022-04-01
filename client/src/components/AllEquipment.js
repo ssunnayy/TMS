@@ -69,7 +69,8 @@ const AllEquipment = (props) => {
             
              <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>
-            <Button onClick={logout}>Logout</Button>        
+            <Nav.Link href="/api/quote">Bid Quotation</Nav.Link>
+            <Button onClick={logout} variant="info">Logout</Button>          
             
           </Nav>
 

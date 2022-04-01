@@ -42,7 +42,8 @@ function HomePage() {
             
             <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>
             <Nav.Link href="/tms/dash">Dashboard</Nav.Link>
-            <Button onClick={logout}>Logout</Button> 
+            <Nav.Link href="/api/quote">Bid Quotation</Nav.Link>
+            <Button onClick={logout} variant="info">Logout</Button> 
             
           </Nav>
             </Navbar.Collapse>

@@ -32,7 +32,7 @@ const AddEquipment = (props) => {
       })
       .then((res) => {
         console.log(res.data);
-        navigate("/");
+        navigate("/tms/dash");
       })
       .catch((err) => {
         console.log(err);
@@ -58,7 +58,7 @@ const AddEquipment = (props) => {
         console.log(err);
       });
   };
-
+  
   return (
     <div>
         <Navbar bg="black" variant="dark"
@@ -72,7 +72,8 @@ const AddEquipment = (props) => {
              <Nav>
             <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/tms/dash">Dashboard</Nav.Link>
-            <Button onClick={logout}>Logout</Button> 
+            <Nav.Link href="/api/quote">Bid Quotation</Nav.Link>
+            <Button onClick={logout} variant="info">Logout</Button>  
             
             
           </Nav>
@@ -246,7 +247,7 @@ const AddEquipment = (props) => {
                
                 
                 {/* <input className="submit-input" type="submit" value="Add Equipment" /> */}
-                <button variant="success"> Add Equipment</button>
+                <Button type="submit" variant="info">Add Equipment</Button>{' '}
             </Form>
             </Stack>
             </Container>

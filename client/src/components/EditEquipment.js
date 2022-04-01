@@ -54,7 +54,7 @@ const [interestRate, setInterestRate] = useState("");
       .put(`http://localhost:8000/api/tms/${id}`, putUpdateData)
       .then((res) => {
         console.log(res.data);
-        navigate("/");
+        navigate("/tms/dash");
       })
       .catch((err) => {
         console.log(err);
@@ -96,7 +96,8 @@ const [interestRate, setInterestRate] = useState("");
              <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>
             <Nav.Link href="/tms/dash">Dashboard</Nav.Link>
-            <Button onClick={logout}>Logout</Button> 
+            <Nav.Link href="/api/quote">Bid Quotation</Nav.Link>
+            <Button onClick={logout} variant="info">Logout</Button> 
           </Nav>
 
              </Navbar.Collapse>
@@ -259,7 +260,7 @@ const [interestRate, setInterestRate] = useState("");
 
         {/* <br /> */}
         {/* Could also be a button element. Try it! */}
-        <button variant="success"> Update Equipment</button>
+        <Button type="submit" variant="info">Sign In</Button>{' '}
         </Form>
             </Stack>
             </Container>

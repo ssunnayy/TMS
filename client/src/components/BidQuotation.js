@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { navigate } from "@reach/router";
 
+import { Nav, Navbar, NavDropdown, Button, Form, Container, Stack } from "react-bootstrap";
+
 const BidQuotation = (props) => {
     const { quote, setQuote } = props;
     const [distance, setDistance] = useState("");
@@ -47,60 +49,76 @@ const BidQuotation = (props) => {
 
     return (
         <div>
+          
             <h1>Bid Quotation</h1>
-            <form onSubmit={(e) => handleSubmit(e)}>
-                <div>
-                    <label htmlFor="distance">Distance</label>
-                    <input 
-                        type="text"
+            <Container>
+            <Stack gap={2} className="col-md-5 mx-auto">
+            <Form onSubmit={(e) => handleSubmit(e)}>
+
+            <Form.Group className="mb-3" controlId="distance">
+                <Form.Label></Form.Label>
+                <Form.Control 
+                        type="number"
                         id="distance"
                         value={distance}
                         onChange={(e) => setDistance(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="fuelCost">Average Fuel Cost</label>
-                    <input 
-                        type="text"
+                    placeholder="Distance"/>
+                </Form.Group>
+
+
+
+                <Form.Group className="mb-3" controlId="fuelcost">
+                <Form.Label></Form.Label>
+                <Form.Control 
+                        type="number"
                         id="fuelCost"
                         value={fuelCost}
                         onChange={(e) => setFuelCost(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="payPerMile">Driver Pay per Mile</label>
-                    <input 
-                        type="text"
+                        placeholder="Fuel Cost/Per Gallon"/>
+                        </Form.Group>
+                
+                
+                
+                        <Form.Group className="mb-3" controlId="payperfmile">
+                <Form.Label></Form.Label>
+                <Form.Control 
+                        type="number"
                         id="payPerMile"
                         value={payPerMile}
                         onChange={(e) => setPayPerMile(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="miscCost">Miscellaneous</label>
-                    <input 
-                        type="text"
+                        placeholder="Drivers Pay Per Mile"/>
+                        </Form.Group>
+
+
+                        <Form.Group className="mb-3" controlId="misccost">
+                    <Form.Label></Form.Label>
+                    <Form.Control 
+                        type="number"
                         id="miscCost"
                         value={miscCost}
                         onChange={(e) => setMiscCost(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="profitMargin">Desired Profit Margin</label>
-                    <input 
-                        type="text"
+                        placeholder="Misc Cost"/>
+                        </Form.Group>
+                
+                
+                        <Form.Group className="mb-3" controlId="profitmargin">
+                    <Form.Label></Form.Label>
+                    <Form.Control 
+                        type="number"
                         id="profitMargin"
                         value={profitMargin}
                         onChange={(e) => setProfitMargin(e.target.value)}
-                    />
-                </div>
+                        placeholder="Profit Margin"/>
+                        </Form.Group>
 
-                <button type="submit">Calculate Cost/Benefit</button>
+                <Button type="submit" variant="info">Calculate Cost/Benefit</Button>
                 <br></br>
                 <br></br>
                 <hr></hr>
                 <br></br>
-            </form>
+                </Form>
+            </Stack>
+            </Container>
 
         </div>
     );

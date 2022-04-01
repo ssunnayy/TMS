@@ -28,7 +28,7 @@ const OneEquipment = (props) => {
       .then((res) => {
         console.log(res);
         console.log(res.data);
-        navigate("/");
+        navigate("/tms/dash");
       })
       .catch((err) => {
         console.log(err);
@@ -69,7 +69,7 @@ const OneEquipment = (props) => {
              <Nav.Link href="/home">Home</Nav.Link>
             <Nav.Link href="/tms/new">Add New Equipment</Nav.Link>
             <Nav.Link href="/tms/dash">Dashboard</Nav.Link>
-            <Button onClick={logout}>Logout</Button> 
+            <Button onClick={logout} variant="info">Logout</Button> 
           </Nav>
 
              </Navbar.Collapse>
@@ -92,10 +92,12 @@ const OneEquipment = (props) => {
 
 
       </div>
-        <button onClick={deleteHandler} className="deletebutton">
+      
+        <Button onClick={deleteHandler} variant="danger">
           Delete Equipment # {oneEquipment.eqpNumber}
-        </button>
+        </Button>
     </div>
+    // <Button type="submit" variant="info">Sign In</Button>{' '}
   );
 };
 
