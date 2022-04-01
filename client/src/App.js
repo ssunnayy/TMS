@@ -7,6 +7,7 @@ import OneEquipment from "./components/OneEquipment";
 import HomePage from "./components/HomePage";
 import LogReg from "./views/LogReg";
 import Error from "./components/Error";
+import Quote from "./views/Quote";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <AddEquipment path="/tms/new"/>
         <EditEquipment path="/tms/:id/edit" />
         <OneEquipment path="/tms/:id"/> 
+        <Quote path="/api/quote" />
         <Error path="/error" />
         
       </Router>

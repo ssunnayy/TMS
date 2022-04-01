@@ -1,4 +1,5 @@
 const Tms = require('../models/tms.model');
+const Quote = require('../models/quote.model');
 
 module.exports = {
     
@@ -59,6 +60,26 @@ module.exports = {
             
             .then((updatedEqp)=>{
                 res.json(updatedEqp);
+            })
+            .catch((err)=>{
+                console.log(err);
+                res.status(400).json(err);
+            })
+    },
+    addQuote: (req, res)=>{
+        Quote.create(req.body)
+            .then((newQuote)=>{
+                res.json(newQuote);
+            })
+            .catch((err)=>{
+                console.log(err);
+                res.status(400).json(err);
+            })
+    },
+    getQuote: (req, res)=>{
+        Quote.findById({_id: req.params.id})
+            .then((quote)=>{
+                res.json(quote);
             })
             .catch((err)=>{
                 console.log(err);

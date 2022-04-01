@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import {navigate} from '@reach/router';
-import { Nav, Navbar, NavDropdown, Button, Form, Table } from "react-bootstrap";
+import { Nav, Navbar, NavDropdown, Button, Form, Table, Stack, Container } from "react-bootstrap";
 import truck from "../images/truck.jpg";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -52,31 +53,38 @@ const Login = (props) =>{
             </Navbar.Collapse>
         
         </Navbar>
-            <h1>Login</h1>
+            <h1 className='log'>Login</h1>
             <p>{errorMessage ? errorMessage : ""}</p>
+            <Container>
+            <Stack gap={2} className="col-md-5 mx-auto">
             <Form onSubmit={login}>
-                <div>
-                    <Form.Label>Email</Form.Label>
-                    <input
+                
+                    <Form.Group className="mb-3" controlId="email">
+                    <Form.Label></Form.Label>
+                    <Form.Control
                         type="text"
                         name="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <Form.Label>Password</Form.Label>
-                    <input
+                        placeholder="Email Address"/>
+                    </Form.Group>
+                
+                    <Form.Group className="mb-3" controlId="password">
+                    <Form.Label></Form.Label>
+                    <Form.Control
                         type="password"
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <button>Sign In</button>
-                </div>
+                        placeholder="Password"/>                    
+                    </Form.Group>
+                    <Button type="submit" variant="info">Sign In</Button>{' '}
+                
             </Form>
+            </Stack>
+            </Container>
+            
+
         </div>
     );
 

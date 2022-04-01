@@ -10,4 +10,8 @@ module.exports = (app) =>{
     app.delete('/api/tms/:id', TmsController.deleteEqp);
     
     app.get('/api/tms/:id', TmsController.getOneEqp);
+    
+    app.post('/api/quote', TmsController.addQuote);
+
+    app.get('/api/quote/:id', TmsController.getQuote);
 }

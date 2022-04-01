@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import { Nav, Navbar, NavDropdown, Button, Form, Table } from "react-bootstrap";
-
+import "../App.css";
+import { Nav, Navbar, NavDropdown, Button, Form, Table, Stack, Container } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
@@ -56,78 +57,82 @@ const Register = (props) =>{
 
 return(
     <div>
-        <h1>Register</h1>
+        <h1 className='reg'>Register</h1>
         {confirmReg ? <h4 style={{color:"green"}}>{confirmReg}</h4> :null}
+
+        <Container>
+        <Stack gap={3} className="col-md-5 mx-auto">
         <Form onSubmit={register}>
-            <div>
-                <Form.Label>
-                    Username
-                </Form.Label>
+        <Form.Group className="mb-3" controlId="username">
+                <Form.Label></Form.Label>
                 {errors.username ? (
                     <span className="error-text">
                         {errors.username.message}
                     </span>
                 ) : null}
-                <input
+                <Form.Control
                     type="text"
                     name="username"
                     value={user.username}
                     onChange={(e) => handleChange(e)}
-                />
-            </div>
-            <div>
+                    placeholder="Username"/>
+                
+                </Form.Group>
+            
+                <Form.Group className="mb-3" controlId="email">
                 <Form.Label>
-                    Email
                 </Form.Label>
                 {errors.email ? (
                     <span className="error-text">
                         {errors.email.message}
                     </span>
                 ) : null}
-                <input
+                <Form.Control
                     type="email"
                     name="email"
                     value={user.email}
                     onChange={(e) => handleChange(e)}
-                />
-            </div>
-            <div>
-                <Form.Label>
-                    Password
-                </Form.Label>
+                    placeholder="Email"/>
+                    </Form.Group>
+            
+                    <Form.Group className="mb-3" controlId="password">
+                <Form.Label>  </Form.Label>
                 {errors.password ? (
                     <span className="error-text">
                         {errors.password.message}
                     </span>
                 ) : null}
-                <input
+                <Form.Control
                     type="password"
                     name="password"
                     value={user.password}
                     onChange={(e) => handleChange(e)}
-                />
-            </div>
-            <div>
-                <Form.Label>
-                    Confirm Password
-                </Form.Label>
+                    placeholder="Password"/>
+                     </Form.Group>
+        
+   
+                <Form.Group className="mb-3" controlId="confirmpassword">
+                <Form.Label></Form.Label>
                 {errors.confirmPassword ? (
                     <span className="error-text">
                         {errors.confirmPassword.message}
                     </span>
                 ) : null}
-                <input
+                <Form.Control
                     type="password"
                     name="confirmPassword"
                     value={user.confirmPassword}
                     onChange={(e) => handleChange(e)}
-                />
-            </div>
-            <div className="center">
-                <button>Register Me</button>
-            </div>
+                    placeholder="Confirm Password"/>
+                </Form.Group>
+           
+          
+            <Button type="submit" variant="info">Register Me</Button>{' '}
+          
 
         </Form>
+        </Stack>
+         </Container>
     </div>
 )
 
